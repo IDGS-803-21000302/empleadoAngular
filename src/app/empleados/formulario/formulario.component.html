@@ -1,0 +1,83 @@
+<div class="card" style="padding: 20px;">
+    <h5 class="card-header">Formulario</h5>
+    <div class="card-body">
+        <form (ngSubmit)="agregarEmpleado()" #empleadoForm="ngForm">
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" 
+                           class="form-control" 
+                           id="nombre" 
+                           name="nombre" 
+                           [(ngModel)]="empleado.nombre" 
+                           required>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="correo" class="form-label">Correo:</label>
+                    <input type="email" 
+                           class="form-control" 
+                           id="correo" 
+                           name="correo" 
+                           [(ngModel)]="empleado.correo" 
+                           required>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento:</label>
+                    <input type="date" 
+                           class="form-control" 
+                           id="fecha_nacimiento" 
+                           name="fecha_nacimiento" 
+                           [(ngModel)]="empleado.fecha_nacimiento" 
+                           required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="telefono" class="form-label">Teléfono:</label>
+                    <input type="tel" 
+                           class="form-control" 
+                           id="telefono" 
+                           name="telefono" 
+                           [(ngModel)]="empleado.telefono" 
+                           required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Sexo:</label>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" 
+                                   id="masculino" 
+                                   name="sexo" 
+                                   class="form-check-input" 
+                                   value="masculino" 
+                                   [(ngModel)]="empleado.sexo" 
+                                   required>
+                            <label for="masculino" class="form-check-label">Masculino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" 
+                                   id="femenino" 
+                                   name="sexo" 
+                                   class="form-check-input" 
+                                   value="femenino" 
+                                   [(ngModel)]="empleado.sexo">
+                            <label for="femenino" class="form-check-label">Femenino</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col text-center">
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="card" style="padding: 20px;">
+    <h5 class="card-header">Empleados</h5>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Fecha de nacimiento</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let empleado of empleados; let i = index">
+                            <td>{{ empleado.nombre }}</td>
+                            <td>{{ empleado.correo }}</td>
+                            <td>{{ empleado.telefono }}</td>
+                            <td>{{ empleado.fecha_nacimiento | date }}</td>
+                            <td>{{ empleado.sexo }}</td>
+                            <td>
+                                <button class="btn btn-danger" (click)="eliminarEmpleado(i)">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
